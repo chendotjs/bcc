@@ -38,9 +38,10 @@ int handle_egress(struct __sk_buff *skb)
 		return TC_ACT_OK;
 
 	if (eth->h_proto == htons(ETH_P_IPV6) &&
-	    ip6h->nexthdr == IPPROTO_ICMPV6)
+	    ip6h->nexthdr == IPPROTO_ICMPV6) {
 	        skb_events.perf_submit_skb(skb, skb->len, &magic, sizeof(magic));
-
+                bpf_trace_printk("CNM\\n");
+        }
 	return TC_ACT_OK;
 }"""
 
