@@ -53,6 +53,7 @@ APPS = \
 	tcpconnlat \
 	tcprtt \
 	vfsstat \
+	ipvlan_queue_xmit \
 	#
 
 FSDIST_ALIASES = btrfsdist ext4dist nfsdist xfsdist
